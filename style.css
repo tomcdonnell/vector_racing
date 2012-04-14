@@ -1,0 +1,41 @@
+/**************************************************************************************************\
+*
+* vim: ts=3 sw=3 et wrap co=100 go-=b
+*
+* Filename: "style.css"
+*
+* Project: Racing.
+*
+* Purpose: Sylesheet.
+*
+* Author: Tom McDonnell 11/2007.
+*
+\**************************************************************************************************/
+
+body
+{
+   margin: 0;
+   padding: 0;
+}
+
+td.track
+{
+   background-color: #555555;
+}
+
+td.barrier
+{
+   background-color: #009900;
+}
+
+td.start
+{
+   background-color: #005500;
+}
+
+td.finish
+{
+   background-color: #550000;
+}
+
+/*******************************************END*OF*FILE********************************************/
