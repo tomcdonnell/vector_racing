@@ -56,12 +56,12 @@ function RacingGame()
    /*
     * Main game loop.
     */
-   function onTimerFire(unknownNumber_mustFindPurpose)
+   function onTimerFire()
    {
       try
       {
          var f = 'onTimerFire()';
-         UTILS.checkArgs(f, arguments, [Number]);
+         UTILS.checkArgs(f, arguments, []);
 
          if (ghostLap !== null && typeof ghostLap[lapTime] != 'undefined')
          {
