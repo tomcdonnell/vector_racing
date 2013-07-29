@@ -17,16 +17,17 @@
 <html>
  <head>
   <!-- NOTE: Order important. -->
-  <script src='lib_tom/js/contrib/jquery/1.5/jquery_minified.js'></script>
-  <script src='lib_tom/js/contrib/utils/DomBuilder.js'></script>
-  <script src='lib_tom/js/physics/Particle.js'></script>
-  <script src='lib_tom/js/physics/VectorPol2d.js'></script>
-  <script src='lib_tom/js/physics/VectorRec2d.js'></script>
-  <script src='lib_tom/js/utils/TablePosition.js'></script>
-  <script src='lib_tom/js/utils/utils.js'></script>
-  <script src='lib_tom/js/utils/utilsDOM.js'></script>
-  <script src='lib_tom/js/contrib/utils/firebugx.js'></script>
-  <script src='lib_tom/js/utils/inheritance.js'></script>
+  <script src='../../lib/tom/js/contrib/jquery/1.7/jquery_minified.js'></script>
+  <script src='../../lib/tom/js/contrib/utils/DomBuilder.js'></script>
+  <script src='../../lib/tom/js/physics/Particle.js'></script>
+  <script src='../../lib/tom/js/physics/VectorPol2d.js'></script>
+  <script src='../../lib/tom/js/physics/VectorRec2d.js'></script>
+  <script src='../../lib/tom/js/utils/TablePosition.js'></script>
+  <script src='../../lib/tom/js/utils/utils.js'></script>
+  <script src='../../lib/tom/js/utils/utilsValidator.js'></script>
+  <script src='../../lib/tom/js/utils/utilsDOM.js'></script>
+<!--  <script src='../../lib/tom/js/contrib/utils/firebugx.js'></script>-->
+  <script src='../../lib/tom/js/utils/inheritance.js'></script>
   <script src='RaceTrack.js'></script>
   <script src='Racer.js'></script>
   <script src='RacingGame.js'></script>

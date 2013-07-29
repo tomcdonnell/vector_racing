@@ -14,32 +14,29 @@
 
 // Globally executed code. /////////////////////////////////////////////////////////////////////////
 
-window.addEventListener('load', onLoadWindow, false);
-
-// Functions. //////////////////////////////////////////////////////////////////////////////////////
-
-// Event listeners. ------------------------------------------------------------------------------//
-
-/*
- *
- */
-function onLoadWindow(e)
-{
-   try
+$(document).ready
+(
+   /*
+    *
+    */
+   function onLoadWindow(e)
    {
-      var f = 'onLoadWindow()';
-      UTILS.checkArgs(f, arguments, [Event]);
+      try
+      {
+         var f = 'onDocumentReady()';
+         UTILS.checkArgs(f, arguments, ['function']);
 
-      var racingGame = new RacingGame();
+         var racingGame = new RacingGame();
 
-      document.body.appendChild(racingGame.getDiv());
+         document.body.appendChild(racingGame.getDiv());
 
-      racingGame.init();
+         racingGame.init();
+      }
+      catch (e)
+      {
+         UTILS.printExceptionToConsole(f, e);
+      }
    }
-   catch (e)
-   {
-      UTILS.printExceptionToConsole(f, e);
-   }
-}
+);
 
 /*******************************************END*OF*FILE********************************************/

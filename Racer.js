@@ -22,7 +22,7 @@
 function Racer(raceTrack, image, imageRadius)
 {
    var f = 'Racer()';
-   UTILS.checkArgs(f, arguments, [RaceTrack, HTMLImageElement, Number]);
+   UTILS.checkArgs(f, arguments, ['RaceTrack', 'HTMLImageElement', 'number']);
    UTILS.assert(f, 0, imageRadius > 0);
 
    // Public functions. /////////////////////////////////////////////////////////////////////////
@@ -41,8 +41,8 @@ function Racer(raceTrack, image, imageRadius)
     */
    this.setPos = function (p)
    {
-      // Optimised for speed. */ var f = 'Racer.setPos()';
-      // Optimised for speed. */ UTILS.checkArgs(f, arguments, [VectorRec2d]);
+      // Optimised for speed. var f = 'Racer.setPos()';
+      // Optimised for speed. UTILS.checkArgs(f, arguments, ['VectorRec2d']);
 
       self.pos.setX(p.getX());
       self.pos.setY(p.getY());
@@ -67,8 +67,8 @@ function Racer(raceTrack, image, imageRadius)
     */
    this.accelerate = function (angle, deltaTime)
    {
-      // Optimised for speed. */ var f = 'Racer.accelerate()';
-      // Optimised for speed. */ UTILS.checkArgs(f, arguments, [Number, Number]);
+      // Optimised for speed. var f = 'Racer.accelerate()';
+      // Optimised for speed. UTILS.checkArgs(f, arguments, ['number', 'number']);
 
       // Get force on racer due to mouse.
       // Magnitude = 1, direction = angle.

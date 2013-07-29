@@ -20,7 +20,7 @@
 function RaceTrack(trackTableGrid, trackTableHeight, trackTableWidth)
 {
    var f = 'RaceTrack()';
-   UTILS.checkArgs(f, arguments, [Array, Number, Number]);
+   UTILS.checkArgs(f, arguments, ['array', 'number', 'number']);
    UTILS.assert(f, 0, trackTableHeight >  0);
    UTILS.assert(f, 1, trackTableWidth  >  0);
 
@@ -42,7 +42,7 @@ function RaceTrack(trackTableGrid, trackTableHeight, trackTableWidth)
    this.setOffsets = function (offsetTop, offsetLeft)
    {
       var f = 'RaceTrack.setOffsets()';
-      UTILS.checkArgs(f, arguments, [Number, Number]);
+      UTILS.checkArgs(f, arguments, ['number', 'number']);
 
       trackTableOffsetTop  = offsetTop;
       trackTableOffsetLeft = offsetLeft;
@@ -68,8 +68,8 @@ function RaceTrack(trackTableGrid, trackTableHeight, trackTableWidth)
     */
    this.convertCoordinatesWindowToTrack = function (pos)
    {
-      //Optimised for speed.*/ var f = 'RaceTrack.convertCoordinatesWindowToTrack()';
-      //Optimised for speed.*/ UTILS.checkArgs(f, arguments, [VectorRec2d]);
+      //Optimised for speed. var f = 'RaceTrack.convertCoordinatesWindowToTrack()';
+      //Optimised for speed. UTILS.checkArgs(f, arguments, ['VectorRec2d']);
 
       pos.setX((pos.getX() - trackTableOffsetLeft) / SCALING_FACTOR);
       pos.setY((pos.getY() - trackTableOffsetTop ) / SCALING_FACTOR);
@@ -80,8 +80,8 @@ function RaceTrack(trackTableGrid, trackTableHeight, trackTableWidth)
     */
    this.convertCoordinatesTrackToWindow = function (pos)
    {
-      //Optimised for speed.*/ var f = 'RaceTrack.convertCoordinatesTrackToWindow()';
-      //Optimised for speed.*/ UTILS.checkArgs(f, arguments, [VectorRec2d]);
+      //Optimised for speed. var f = 'RaceTrack.convertCoordinatesTrackToWindow()';
+      //Optimised for speed. UTILS.checkArgs(f, arguments, ['VectorRec2d']);
 
       pos.setX((pos.getX() * SCALING_FACTOR) + trackTableOffsetLeft);
       pos.setY((pos.getY() * SCALING_FACTOR) + trackTableOffsetTop );
@@ -97,8 +97,8 @@ function RaceTrack(trackTableGrid, trackTableHeight, trackTableWidth)
     */
    this.updateRacerPosition = function (posOld, pos, vel)
    {
-      //Optimised for speed.*/ var f = 'RaceTrack.updateRacerPosition()';
-      //Optimised for speed.*/ UTILS.checkArgs(f, arguments, [VectorRec2d, VectorRec2d, VectorRec2d]);
+      //Optimised for speed. var f = 'RaceTrack.updateRacerPosition()';
+      //Optimised for speed. UTILS.checkArgs(f, arguments, ['VectorRec2d', 'VectorRec2d', 'VectorRec2d']);
       // Get row and column of old and new position of racer in table.
       var tablePosOld = getTablePos(posOld);
       var tablePosNew = getTablePos(pos   );
@@ -118,8 +118,8 @@ function RaceTrack(trackTableGrid, trackTableHeight, trackTableWidth)
     */
    function dealWithCollisions(pos, vel, tablePosOld, tablePosNew)
    {
-      //Optimised for speed.*/ var f = 'Racetrack.dealWithCollisions()';
-      //Optimised for speed.*/ UTILS.checkArgs(f, arguments, [VectorRec2d, VectorRec2d, TablePosition, TablePosition]);
+      //Optimised for speed. var f = 'Racetrack.dealWithCollisions()';
+      //Optimised for speed. UTILS.checkArgs(f, arguments, ['VectorRec2d', 'VectorRec2d', 'TablePosition', 'TablePosition']);
 
       var newPosIsBarrier = testTrackTableSquare(tablePosNew, TRACK_SQUARE.BARRIER);
 
@@ -153,8 +153,8 @@ function RaceTrack(trackTableGrid, trackTableHeight, trackTableWidth)
     */
    function collideVertical(pos, vel, tablePosOld, tORb)
    {
-      //Optimised for speed.*/ var f = 'RaceTrack.collideVertical()';
-      //Optimised for speed.*/ UTILS.checkArgs(f, arguments, [VectorRec2d, VectorRec2d, TablePosition, String]);
+      //Optimised for speed. var f = 'RaceTrack.collideVertical()';
+      //Optimised for speed. UTILS.checkArgs(f, arguments, ['VectorRec2d', 'VectorRec2d', 'TablePosition', 'string']);
 
       var y = pos.getY();
       pos.setY(y + 2 * (getBarrierY(tablePosOld, tORb) - y));
@@ -166,8 +166,8 @@ function RaceTrack(trackTableGrid, trackTableHeight, trackTableWidth)
     */
    function collideHorizontal(pos, vel, tablePosOld, lORr)
    {
-      //Optimised for speed.*/ var f = 'RaceTrack.collideHorizontal()';
-      //Optimised for speed.*/ UTILS.checkArgs(f, arguments, [VectorRec2d, VectorRec2d, TablePosition, String]);
+      //Optimised for speed. var f = 'RaceTrack.collideHorizontal()';
+      //Optimised for speed. UTILS.checkArgs(f, arguments, ['VectorRec2d', 'VectorRec2d', 'TablePosition', 'string']);
 
       var x = pos.getX();
       pos.setX(x + 2 * (getBarrierX(tablePosOld, lORr) - x));
@@ -179,11 +179,11 @@ function RaceTrack(trackTableGrid, trackTableHeight, trackTableWidth)
     */
    function collideDiagonal(pos, vel, tablePosOld, tablePosNew, tORb, lORr)
    {
-      //Optimised for speed.*/ var f = 'RaceTrack.collideDiagonal()';
-      //Optimised for speed.*/ UTILS.checkArgs
-      //Optimised for speed.*/ (
-      //Optimised for speed.*/    f, arguments, [VectorRec2d, VectorRec2d, TablePosition, TablePosition, String, String]
-      //Optimised for speed.*/ );
+      //Optimised for speed. var f = 'RaceTrack.collideDiagonal()';
+      //Optimised for speed. UTILS.checkArgs
+      //Optimised for speed. (
+      //Optimised for speed.    f, arguments, ['VectorRec2d', 'VectorRec2d', 'TablePosition', 'TablePosition', 'string', 'string']
+      //Optimised for speed. );
 
       var rOld = tablePosOld.getRow();
       var cOld = tablePosOld.getCol();
@@ -251,8 +251,8 @@ function RaceTrack(trackTableGrid, trackTableHeight, trackTableWidth)
     */
    function getBarrierX(tablePosOld, lORr)
    {
-      //Optimised for speed.*/ var f = 'RaceTrack.getBarrierX()';
-      //Optimised for speed.*/ UTILS.checkArgs(f, arguments, [TablePosition, String]);
+      //Optimised for speed. var f = 'RaceTrack.getBarrierX()';
+      //Optimised for speed. UTILS.checkArgs(f, arguments, ['TablePosition', 'string']);
 
       switch (lORr)
       {
@@ -267,8 +267,8 @@ function RaceTrack(trackTableGrid, trackTableHeight, trackTableWidth)
     */
    function getBarrierY(tablePosOld, tORb)
    {
-      //Optimised for speed.*/ var f = 'RaceTrack.getBarrierY()';
-      //Optimised for speed.*/ UTILS.checkArgs(f, arguments, [TablePosition, String]);
+      //Optimised for speed. var f = 'RaceTrack.getBarrierY()';
+      //Optimised for speed. UTILS.checkArgs(f, arguments, ['TablePosition', 'string']);
 
       switch (tORb)
       {
@@ -287,8 +287,8 @@ function RaceTrack(trackTableGrid, trackTableHeight, trackTableWidth)
     */
    function rebound(v)
    {
-      //Optimised for speed.*/ var f = 'RaceTrack.rebound()';
-      //Optimised for speed.*/ UTILS.checkArgs(f, arguments, [Number]);
+      //Optimised for speed. var f = 'RaceTrack.rebound()';
+      //Optimised for speed. UTILS.checkArgs(f, arguments, ['number']);
 
       return -v * 0.6;
    }
@@ -300,8 +300,8 @@ function RaceTrack(trackTableGrid, trackTableHeight, trackTableWidth)
     */
    function dealWithLapTimeIssues(pos, tablePosOld, tablePosNew)
    {
-      //Optimised for speed.*/ var f = 'Racetrack.dealWithLapTimeIssues()';
-      //Optimised for speed.*/ UTILS.checkArgs(f, arguments, [VectorRec2d, TablePosition, TablePosition]);
+      //Optimised for speed. var f = 'Racetrack.dealWithLapTimeIssues()';
+      //Optimised for speed. UTILS.checkArgs(f, arguments, ['VectorRec2d', 'TablePosition', 'TablePosition']);
 
       if
       (
@@ -310,7 +310,6 @@ function RaceTrack(trackTableGrid, trackTableHeight, trackTableWidth)
       )
       {
          // Start lap timer.
-console.info(f, 'Crossed s/f line forwards.');
          return 1;
       }
 
@@ -321,7 +320,6 @@ console.info(f, 'Crossed s/f line forwards.');
       )
       {
          // Nullify lap time.
-console.info(f, 'Crossed s/f line backwards.');
          return -1;
       }
 
@@ -336,8 +334,8 @@ console.info(f, 'Crossed s/f line backwards.');
     */
    function getTablePos(pos)
    {
-      //Optimised for speed.*/ var f = 'RaceTrack.getTablePos()';
-      //Optimised for speed.*/ UTILS.checkArgs(f, arguments, [VectorRec2d]);
+      //Optimised for speed. var f = 'RaceTrack.getTablePos()';
+      //Optimised for speed. UTILS.checkArgs(f, arguments, ['VectorRec2d']);
 
       return tablePos = new TablePosition
       (
@@ -351,8 +349,8 @@ console.info(f, 'Crossed s/f line backwards.');
     */
    function testTrackTableSquare(tablePos, trackSquareEnum)
    {
-      //Optimised for speed.*/ var f = 'RaceTrack.testTrackTableSquare()';
-      //Optimised for speed.*/ UTILS.checkArgs(f, arguments, [TablePosition, Number]);
+      //Optimised for speed. var f = 'RaceTrack.testTrackTableSquare()';
+      //Optimised for speed. UTILS.checkArgs(f, arguments, ['TablePosition', 'number']);
 
       var value;
       switch (trackSquareEnum)
@@ -445,7 +443,7 @@ console.info(f, 'Crossed s/f line backwards.');
    function testStartAndFinishSquares(squaresStart, squaresFinish)
    {
       var f = 'RaceTrack.testStartAndFinishSquares()';
-      UTILS.checkArgs(f, arguments, [Array, Array]);
+      UTILS.checkArgs(f, arguments, ['array', 'array']);
 
       var n_squares = squaresStart.length;
 

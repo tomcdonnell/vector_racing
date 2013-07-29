@@ -124,8 +124,8 @@ function RacingGame()
    {
       try
       {
-         /* Optimised for speed. */ var f = 'onMouseMove';
-         /* Optimised for speed. */ UTILS.checkArgs(f, arguments, [MouseEvent]);
+         // Optimised for speed. var f = 'onMouseMove';
+         // Optimised for speed. UTILS.checkArgs(f, arguments, ['MouseEvent']);
 
          mousePos.setX(e.clientX);
          mousePos.setY(e.clientY);
